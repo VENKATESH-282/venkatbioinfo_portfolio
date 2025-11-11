@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkatesh Rajendran | Bioinformatics Research Specialist</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+        }
+:root {
+--primary: #2563eb;
+--primary-dark: #1e40af;
+--secondary: #06b6d4;
+--accent: #8b5cf6;
+--dark: #0f172a;
+--dark-alt: #1e293b;
+--light: #f1f5f9;
+--text: #334155;
+--text-light: #64748b;
+        }
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+color: var(--text);
+background: var(--light);
+overflow-x: hidden;
+        }
+.hero {
+background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%);
+color: white;
+min-height: 100vh;
+display: flex;
+align-items: center;
+position: relative;
+overflow: hidden;
+        }
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(37,99,235,0.1)"/></svg>');
+background-size: cover;
+animation: wave 20s linear infinite;
+        }
+@keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 2rem;
+position: relative;
+z-index: 1;
+        }
+nav {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background: rgba(15, 23, 42, 0.95);
+backdrop-filter: blur(10px);
+padding: 1rem 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+nav .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+        }
+.logo {
+font-size: 1.5rem;
+font-weight: bold;
+background: linear-gradient(135deg, var(--secondary), var(--accent));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+        }
+.nav-links {
+display: flex;
+gap: 2rem;
+list-style: none;
+        }
+.nav-links a {
+color: white;
+text-decoration: none;
+transition: color 0.3s;
+position: relative;
+        }
+.nav-links a::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background: var(--secondary);
+transition: width 0.3s;
+        }
+.nav-links a:hover::after {
+width: 100%;
+        }
+.hero-content {
+padding-top: 6rem;
+display: flex;
+align-items: center;
+gap: 3rem;
+        }
+.hero-text {
+flex: 1;
+        }
+.profile-image-container {
+flex-shrink: 0;
+animation: fadeInUp 0.8s ease-out;
+        }
+.profile-image {
+width: 300px;
+height: 300px;
+border-radius: 50%;
+object-fit: cover;
+border: 6px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s;
+        }
+.profile-image:hover {
+transform: scale(1.05);
+        }
+.profile-placeholder {
+width: 300px;
+height: 300px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--secondary), var(--accent));
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 6rem;
+color: white;
+border: 6px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s;
+        }
+.profile-placeholder:hover {
+transform: scale(1.05);
+        }
+.hero h1 {
+font-size: 3.5rem;
+margin-bottom: 1rem;
+animation: fadeInUp 0.8s ease-out;
+        }
+.hero .subtitle {
+font-size: 1.5rem;
+color: var(--secondary);
+margin-bottom: 1rem;
+animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+.phd-badge {
+display: inline-block;
+background: linear-gradient(135deg, #10b981, #059669);
+color: white;
+padding: 0.6rem 1.2rem;
+border-radius: 25px;
+font-weight: 600;
+margin-bottom: 1rem;
+animation: fadeInUp 0.8s ease-out 0.3s backwards;
+box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+.phd-badge i {
+margin-right: 0.5rem;
+        }
+.hero p {
+font-size: 1.1rem;
+max-width: 700px;
+margin-bottom: 2rem;
+line-height: 1.8;
+animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+@keyframes fadeInUp {
+            from {
+opacity: 0;
+transform: translateY(30px);
+            }
+            to {
+opacity: 1;
+transform: translateY(0);
+            }
+        }
+.contact-info {
+display: flex;
+gap: 2rem;
+flex-wrap: wrap;
+margin-bottom: 2rem;
+animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+.contact-item {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+        }
+.contact-item a {
+color: var(--secondary);
+text-decoration: none;
+        }
+.contact-item a:hover {
+text-decoration: underline;
+        }
+.btn {
+display: inline-block;
+padding: 1rem 2rem;
+background: linear-gradient(135deg, var(--secondary), var(--accent));
+color: white;
+text-decoration: none;
+border-radius: 50px;
+font-weight: 600;
+transition: transform 0.3s, box-shadow 0.3s;
+animation: fadeInUp 0.8s ease-out 0.8s backwards;
+        }
+.btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+.btn i {
+margin-right: 0.5rem;
+        }
+section {
+padding: 5rem 0;
+        }
+.section-title {
+text-align: center;
+font-size: 2.5rem;
+margin-bottom: 3rem;
+color: var(--dark);
+position: relative;
+        }
+.section-title::after {
+content: '';
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 80px;
+height: 4px;
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+border-radius: 2px;
+        }
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+        }
+.card {
+background: white;
+padding: 2rem;
+border-radius: 15px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+transition: transform 0.3s, box-shadow 0.3s;
+        }
+.card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+.card-icon {
+width: 60px;
+height: 60px;
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.8rem;
+margin-bottom: 1rem;
+color: white;
+        }
+.card h3 {
+color: var(--dark);
+margin-bottom: 0.5rem;
+font-size: 1.3rem;
+        }
+.card .institution {
+color: var(--primary);
+font-weight: 600;
+margin-bottom: 0.5rem;
+        }
+.card .date {
+color: var(--text-light);
+font-size: 0.9rem;
+margin-bottom: 1rem;
+        }
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+        }
+.skill-category {
+background: white;
+padding: 1.5rem;
+border-radius: 12px;
+box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+.skill-category h4 {
+color: var(--primary);
+margin-bottom: 1rem;
+font-size: 1.1rem;
+        }
+.skill-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+        }
+.skill-tag {
+background: var(--light);
+padding: 0.4rem 0.8rem;
+border-radius: 20px;
+font-size: 0.85rem;
+color: var(--text);
+border: 1px solid #e2e8f0;
+transition: all 0.3s ease;
+        }
+.skill-tag:hover {
+background: var(--secondary);
+color: white;
+transform: scale(1.05);
+        }
+.publication {
+background: white;
+padding: 2rem;
+margin-bottom: 2rem;
+border-radius: 12px;
+box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+border-left: 4px solid var(--primary);
+overflow: hidden;
+position: relative;
+        }
+.publication::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+animation: publicationGlow 3s ease-in-out infinite alternate;
+        }
+@keyframes publicationGlow {
+0% { opacity: 0.5; transform: translateX(-100%); }
+100% { opacity: 1; transform: translateX(100%); }
+        }
+.publication h3 {
+color: var(--dark);
+margin-bottom: 0.8rem;
+overflow: hidden;
+white-space: nowrap;
+border-right: 3px solid transparent;
+animation: typing 2.5s steps(40) forwards, blink 0.75s infinite;
+        }
+@keyframes typing {
+from { width: 0; }
+to { width: 100%; }
+        }
+@keyframes blink {
+0%, 50% { border-color: transparent; }
+51%, 100% { border-color: var(--primary); }
+        }
+.publication .journal {
+color: var(--primary);
+font-weight: 600;
+margin-bottom: 0.5rem;
+        }
+.publication .authors {
+color: var(--text-light);
+font-size: 0.95rem;
+margin-bottom: 0.5rem;
+        }
+.achievement-badge {
+background: linear-gradient(135deg, #fbbf24, #f59e0b);
+color: white;
+padding: 1.5rem;
+border-radius: 12px;
+text-align: center;
+font-weight: 600;
+font-size: 1.1rem;
+box-shadow: 0 5px 20px rgba(251, 191, 36, 0.3);
+        }
+footer {
+background: var(--dark);
+color: white;
+text-align: center;
+padding: 2rem 0;
+        }
+@media (max-width: 768px) {
+.hero h1 {
+font-size: 2.5rem;
+            }
+.nav-links {
+display: none;
+            }
+.contact-info {
+flex-direction: column;
+gap: 1rem;
+            }
+.hero-content {
+flex-direction: column-reverse;
+text-align: center;
+            }
+.profile-image, .profile-placeholder {
+width: 200px;
+height: 200px;
+            }
+.profile-placeholder {
+font-size: 4rem;
+            }
+        }
+.timeline {
+position: relative;
+padding-left: 2rem;
+        }
+.timeline::before {
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+width: 2px;
+background: linear-gradient(180deg, var(--primary), var(--secondary));
+animation: timelinePulse 2s ease-in-out infinite alternate;
+        }
+@keyframes timelinePulse {
+0% { opacity: 0.6; }
+100% { opacity: 1; }
+        }
+.timeline-item {
+position: relative;
+margin-bottom: 2rem;
+background: white;
+padding: 1.5rem;
+border-radius: 12px;
+box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+transform: translateX(50px);
+opacity: 0;
+transition: all 0.6s ease-out;
+        }
+.timeline-item.animate {
+transform: translateX(0);
+opacity: 1;
+        }
+.timeline-item::before {
+content: '';
+position: absolute;
+left: -2.5rem;
+top: 1.5rem;
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: var(--primary);
+border: 3px solid white;
+transition: transform 0.3s ease;
+        }
+.timeline-item:hover::before {
+transform: scale(1.2);
+        }
+.skill-category {
+transform: translateY(30px);
+opacity: 0;
+transition: all 0.6s ease-out;
+        }
+.skill-category.animate {
+transform: translateY(0);
+opacity: 1;
+        }
+.card {
+transform: translateY(30px);
+opacity: 0;
+transition: all 0.6s ease-out;
+        }
+.card.animate {
+transform: translateY(0);
+opacity: 1;
+        }
+</style>
+</head>
+<body>
+<nav>
+<div class="container">
+<div class="logo">VR</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div class="hero-text">
+<h1>Venkatesh Rajendran</h1>
+<p class="subtitle">Bioinformatics Research Specialist</p>
+<div class="phd-badge"><i class="fas fa-graduation-cap"></i>Seeking PhD Opportunities</div>
+<p>Experienced bioinformatics professional specializing in genomics, NGS analysis, and computational drug discovery. Leveraging machine learning and high-performance computing to decode complex biological mechanisms and advance precision medicine.</p>
+<div class="contact-info">
+<div class="contact-item"><i class="fas fa-envelope"></i> venkatbioinfo282@gmail.com</div>
+<div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/venkatesh-r-362a9426b/" style="color: var(--secondary);">LinkedIn</a></div>
+<div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/VenkateshRajendran" style="color: var(--secondary);">GitHub</a></div>
+</div>
+<a href="#contact" class="btn">Get In Touch</a>
+</div>
+<div class="profile-image-container">
+<!-- Replace the src with your actual image URL -->
+<img src="dp.jpg" alt="Venkatesh Rajendran" class="profile-image">
+<!-- Placeholder - Remove this div when you add your image -->
+<!-- <div class="profile-placeholder">VR</div> -->
+</div>
+</div>
+</div>
+</section>
+<section id="experience">
+<div class="container">
+<h2 class="section-title">Professional Experience</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h3>Research Assistant</h3>
+<div class="institution">Tata Institute for Genetics and Society, Bangalore</div>
+<div class="date">November 2023 - Present</div>
+<ul>
+<li>Conducting genetic research projects with focus on NGS platforms (P2SOLO, Oxford Nanopore)</li>
+<li>Developing automated pipelines using Snakemake and Nextflow for long-read sequencing data</li>
+<li>Collaborating with multidisciplinary teams on cutting-edge genetic studies</li>
+</ul>
+</div>
+<div class="timeline-item">
+<h3>Assistant Bioinformatician</h3>
+<div class="institution">Dr. Omics Research Lab, New Delhi</div>
+<div class="date">August 2023 - October 2023</div>
+<ul>
+<li>Supported bioinformatics projects through data analysis and interpretation</li>
+<li>Developed bioinformatics tools and contributed to research publications</li>
+<li>Collaborated with senior researchers on computational biology projects</li>
+</ul>
+</div>
+<div class="timeline-item">
+<h3>Freelance Bioinformatics Consultant</h3>
+<div class="institution">Remote</div>
+<div class="date">2019 - Present</div>
+<ul>
+<li>Providing bioinformatics analysis and consulting for research projects</li>
+<li>Developing custom scripts and tools for data processing</li>
+<li>Enhancing project efficiency through automated workflows</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="education" style="background: white;">
+<div class="container">
+<h2 class="section-title">Education</h2>
+<div class="cards">
+<div class="card">
+<div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+<h3>M.Sc. in Bioinformatics</h3>
+<div class="institution">Alagappa University</div>
+<div class="date">2021 - 2023 | Karaikudi, India</div>
+<p><strong>CGPA: 9.1</strong></p>
+<div class="achievement-badge" style="margin-top: 1rem; font-size: 0.95rem;">
+                         University First Rank Holder
+</div>
+</div>
+<div class="card">
+<div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+<h3>B.Sc. in Bioinformatics</h3>
+<div class="institution">Bishop Heber College</div>
+<div class="date">2018 - 2021 | Tiruchirappalli, India</div>
+<p><strong>CGPA: 8.4</strong></p>
+</div>
+<div class="card">
+<div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+<h3>Diploma in Bioanalytical Techniques</h3>
+<div class="institution">Bishop Heber College</div>
+<div class="date">2018 - 2019 | Tiruchirappalli, India</div>
+<p><strong>Grade: A+</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="skills">
+<div class="container">
+<h2 class="section-title">Technical Expertise</h2>
+<div class="skills-grid">
+<div class="skill-category">
+<h4>Programming Languages</h4>
+<div class="skill-tags">
+<span class="skill-tag">Python</span>
+<span class="skill-tag">R</span>
+<span class="skill-tag">Perl</span>
+<span class="skill-tag">C/C++</span>
+<span class="skill-tag">SQL</span>
+<span class="skill-tag">Bash</span>
+</div>
+</div>
+<div class="skill-category">
+<h4>Python Libraries</h4>
+<div class="skill-tags">
+<span class="skill-tag">Pandas</span>
+<span class="skill-tag">PyTorch</span>
+<span class="skill-tag">NumPy</span>
+<span class="skill-tag">Scikit-learn</span>
+</div>
+</div>
+<div class="skill-category">
+<h4>Workflow Management</h4>
+<div class="skill-tags">
+<span class="skill-tag">Snakemake</span>
+<span class="skill-tag">Nextflow</span>
+<span class="skill-tag">AWS</span>
+</div>
+</div>
+<div class="skill-category">
+<h4>Drug Discovery</h4>
+<div class="skill-tags">
+<span class="skill-tag">Schrödinger</span>
+<span class="skill-tag">AutoDock</span>
+<span class="skill-tag">Modeller</span>
+<span class="skill-tag">Discovery Studio</span>
+</div>
+</div>
+<div class="skill-category">
+<h4>NGS Analysis Tools</h4>
+<div class="skill-tags">
+<span class="skill-tag">MinKnow</span>
+<span class="skill-tag">FastQC</span>
+<span class="skill-tag">SAMtools</span>
+<span class="skill-tag">GATK</span>
+<span class="skill-tag">IGV</span>
+<span class="skill-tag">DeepVariant</span>
+</div>
+</div>
+<div class="skill-category">
+<h4>Sequencing Technologies</h4>
+<div class="skill-tags">
+<span class="skill-tag">ONT Sequencing</span>
+<span class="skill-tag">P2SOLO</span>
+<span class="skill-tag">RNA-Seq</span>
+<span class="skill-tag">WGS</span>
+<span class="skill-tag">PCR</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="publications" style="background: white;">
+<div class="container">
+<h2 class="section-title">Publications & Research</h2>
+<div class="publication" style="animation-delay: 0.2s;">
+<h3>ML Enhanced Bioactivity Prediction for Angiotensin II Receptor: A Potential Anti-Hypertensive Drug Target</h3>
+<div class="journal">Scientific Reports, Springer Nature (July 2025)</div>
+<div class="authors">Venkatesh Rajendran, Jeyanthi Sankar, Ling Shing Wong, Karthikeyan Muthusamy</div>
+<p><strong>DOI:</strong> 10.1038/s41598-025-08653-4</p>
+</div>
+<div class="publication" style="animation-delay: 0.4s;">
+<h3>NMPhenogen: A Comprehensive Database for Genotype-Phenotype Correlation in Neuromuscular Genetic Disorders</h3>
+<div class="journal">Frontiers in Neuroscience - Neurogenomics (Accepted)</div>
+<div class="authors">Venkatesh Rajendran, Sacheta S. Kulkarni, Harshatha N Reddy, et al.</div>
+<p><strong>Status:</strong> Accepted | Submitted: September 2025</p>
+</div>
+<div class="publication" style="animation-delay: 0.6s;">
+<h3>Cataloging Actionable Pharmacogenomic Variants for Indian Clinical Practice: A Scoping Review</h3>
+<div class="journal">JoX</div>
+<div class="authors">Sacheta S. Kulkarni, Venkatesh Rajendran, Anuradha Das, Gayatri Rangarajan Iyer</div>
+<p><strong>DOI:</strong> 10.3390/jox15040101</p>
+</div>
+<div class="publication" style="animation-delay: 0.8s;">
+<h3>Molecular Characterization and CRISPR/Cas9 Validation of Vitellogenin in Leucinodes orbonalis</h3>
+<div class="journal">Gene</div>
+<div class="authors">K. Ashok, C. N. Bhargava, Venkatesh Rajendran, et al.</div>
+<p><strong>DOI:</strong> 10.1016/j.gene.2024.148925</p>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="container">
+<h2 class="section-title">Featured Projects</h2>
+<div class="cards">
+<div class="card">
+<div class="card-icon"><i class="fas fa-dna"></i></div>
+<h3>QSAR-based Drug Design Platform</h3>
+<p>Developed machine learning models for designing Angiotensin-2 inhibitors. Deployed as a web application enabling researchers to predict drug compound efficacy through molecular structure analysis.</p>
+<div class="skill-tags" style="margin-top: 1rem;">
+<span class="skill-tag">Machine Learning</span>
+<span class="skill-tag">QSAR</span>
+<span class="skill-tag">Web Dev</span>
+</div>
+</div>
+<div class="card">
+<div class="card-icon"><i class="fas fa-microscope"></i></div>
+<h3>NGS Pipeline Automation</h3>
+<p>Created automated workflows for processing long-read sequencing data using Snakemake and Nextflow, significantly improving data processing efficiency for genetic research projects.</p>
+<div class="skill-tags" style="margin-top: 1rem;">
+<span class="skill-tag">Snakemake</span>
+<span class="skill-tag">ONT</span>
+<span class="skill-tag">Pipeline</span>
+</div>
+</div>
+<div class="card">
+<div class="card-icon"><i class="fas fa-pills"></i></div>
+<h3>Multi-Target SARS-CoV-2 Analysis</h3>
+<p>Conducted computational analysis to identify promising drug targets for SARS-CoV-2, contributing to COVID-19 research efforts through bioinformatics approaches.</p>
+<div class="skill-tags" style="margin-top: 1rem;">
+<span class="skill-tag">Drug Discovery</span>
+<span class="skill-tag">Molecular Docking</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" style="background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%); color: white;">
+<div class="container" style="text-align: center;">
+<h2 class="section-title" style="color: white;">Let's Connect</h2>
+<p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">Interested in collaboration or have a project in mind? I'm always open to discussing bioinformatics, genomics, and computational biology opportunities.</p>
+<div class="contact-info" style="justify-content: center; margin-bottom: 2rem;">
+<div class="contact-item"><i class="fas fa-envelope"></i> venkatbioinfo282@gmail.com</div>
+</div>
+<!-- Contact Buttons Section -->
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+<!-- Email -->
+<a href="mailto:venkatbioinfo282@gmail.com" class="btn">
+<i class="fa-solid fa-envelope"></i> Email Me
+</a>
+<!-- LinkedIn -->
+<a href="https://linkedin.com/in/venkatesh-r-362a9426b/" class="btn" target="_blank">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+<!-- GitHub -->
+<a href="https://github.com/VenkateshRajendran" class="btn" target="_blank">
+<i class="fab fa-github"></i> GitHub
+</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<p>&copy; 2025 Venkatesh Rajendran. All rights reserved.</p>
+<p style="margin-top: 0.5rem; color: var(--text-light);">Bioinformatics Research Specialist | Genomics | Computational Biology</p>
+</div>
+</footer>
+<script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+                    });
+                }
+            });
+        });
+// Add scroll effect to navigation
+let lastScroll = 0;
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+const currentScroll = window.pageYOffset;
+if (currentScroll > 100) {
+nav.style.padding = '0.5rem 0';
+            } else {
+nav.style.padding = '1rem 0';
+            }
+lastScroll = currentScroll;
+        });
+// Intersection Observer for fade-in animations
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -100px 0px'
+        };
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+// Observe cards, timeline items, publications, skill-categories
+document.querySelectorAll('.card, .timeline-item, .publication, .skill-category').forEach(el => {
+observer.observe(el);
+        });
+</script>
+</body>
+</html>
